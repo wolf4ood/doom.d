@@ -54,3 +54,5 @@
 ;; they are implemented.
 
 (global-set-key (kbd "C-s") 'swiper)
+
+(blink-cursor-mode 10)

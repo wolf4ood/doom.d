@@ -56,3 +56,6 @@
 (global-set-key (kbd "C-s") 'swiper)
 
 (blink-cursor-mode 10)
+
+(add-hook 'before-save-hook (lambda () (when (eq 'rustic-mode major-mode)
+                                           (lsp-format-buffer))))

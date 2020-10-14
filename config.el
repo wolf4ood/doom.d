@@ -59,3 +59,27 @@
 
 (add-hook 'before-save-hook (lambda () (when (eq 'rustic-mode major-mode)
                                            (lsp-format-buffer))))
+(use-package lsp-mode
+    :commands lsp
+    :ensure t
+    :diminish lsp-mode
+    :hook
+    (elixir-mode . lsp)
+    :init
+    (add-to-list 'exec-path "~/Coding/Elixir/elixir-ls/release"))
+
+
+(after! lsp-ui
+  (setq lsp-ui-doc-max-height 20
+        lsp-ui-doc-max-width 80
+        lsp-ui-sideline-ignore-duplicate t
+        lsp-ui-doc-header t
+        lsp-ui-doc-include-signature t
+        lsp-ui-doc-position 'bottom
+        lsp-ui-doc-use-webkit nil
+        lsp-ui-flycheck-enable t
+        lsp-ui-imenu-kind-position 'left
+        lsp-ui-sideline-code-actions-prefix "💡"
+        ;; fix for completing candidates not showing after “Enum.”:
+        company-lsp-match-candidate-predicate #'company-lsp-match-candidate-prefix
+        ))

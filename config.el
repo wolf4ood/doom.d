@@ -58,7 +58,13 @@
 (blink-cursor-mode 10)
 
 (add-hook 'before-save-hook (lambda () (when (eq 'rustic-mode major-mode)
-                                           (lsp-format-buffer))))
+                                    (lsp-format-buffer))))
+
+(add-hook 'before-save-hook (lambda () (when (eq 'elixir-mode major-mode)
+                                    (lsp-format-buffer))))
+
+
+
 (use-package lsp-mode
     :commands lsp
     :ensure t

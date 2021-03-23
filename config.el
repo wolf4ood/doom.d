@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Enrico Risa"
+      user-mail-address "enrico.risa@com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -60,19 +60,8 @@
 (add-hook 'before-save-hook (lambda () (when (eq 'rustic-mode major-mode)
                                     (lsp-format-buffer))))
 
-(add-hook 'before-save-hook (lambda () (when (eq 'elixir-mode major-mode)
-                                    (lsp-format-buffer))))
 
-
-
-(use-package lsp-mode
-    :commands lsp
-    :ensure t
-    :diminish lsp-mode
-    :hook
-    (elixir-mode . lsp)
-    :init
-    (add-to-list 'exec-path "~/Coding/Elixir/elixir-ls/release"))
+(setq treemacs-position 'right)
 
 
 (after! lsp-ui

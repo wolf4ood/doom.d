@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -35,7 +35,7 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-
+(setq compilation-scroll-output t)
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -64,17 +64,17 @@
 (setq treemacs-position 'right)
 
 
-(after! lsp-ui
-  (setq lsp-ui-doc-max-height 20
-        lsp-ui-doc-max-width 80
-        lsp-ui-sideline-ignore-duplicate t
-        lsp-ui-doc-header t
-        lsp-ui-doc-include-signature t
-        lsp-ui-doc-position 'bottom
-        lsp-ui-doc-use-webkit nil
-        lsp-ui-flycheck-enable t
-        lsp-ui-imenu-kind-position 'left
-        lsp-ui-sideline-code-actions-prefix "💡"
+;(after! lsp-ui
+;  (setq lsp-ui-doc-max-height 20
+;        lsp-ui-doc-max-width 80
+;        lsp-ui-sideline-ignore-duplicate t
+;        lsp-ui-doc-header t
+;        lsp-ui-doc-include-signature t
+;        lsp-ui-doc-position 'bottom
+;        lsp-ui-doc-use-webkit nil
+;        lsp-ui-flycheck-enable t
+;        lsp-ui-imenu-kind-position 'left
+;        lsp-ui-sideline-code-actions-prefix "💡"
         ;; fix for completing candidates not showing after “Enum.”:
-        company-lsp-match-candidate-predicate #'company-lsp-match-candidate-prefix
-        ))
+;        company-lsp-match-candidate-predicate #'company-lsp-match-candidate-prefix
+;        ))

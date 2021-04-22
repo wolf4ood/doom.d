@@ -51,3 +51,12 @@
 
 
 (package! graphql-mode)
+(package! company-box)
+(package! tree-sitter)
+(package! tree-sitter-langs)
+(package! lsp-treemacs)
+
+(when (package! treemacs)
+  (progn
+    (package! treemacs-all-the-icons)
+    (package! treemacs-icons-dired)))

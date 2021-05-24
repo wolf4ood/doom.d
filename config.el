@@ -59,7 +59,8 @@
 
 (add-hook 'before-save-hook (lambda () (when (eq 'rustic-mode major-mode)
                                     (lsp-format-buffer))))
-
+(add-hook 'after-save-hook (lambda () (when (eq 'org-mode major-mode)
+                                        (org-re-reveal-export-to-html))))
 
 (setq treemacs-position 'right)
 

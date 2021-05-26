@@ -89,3 +89,12 @@
 (setq lsp-elixir-fetch-deps nil)
 (setq lsp-elixir-mix-env "dev")
 (setq lsp-elixir-enable-test-lenses nil)
+
+
+(map! :n "TAB" #'next-buffer)
+(map! :n [backtab] 'previous-buffer)
+
+(require 'which-key)
+(setq which-key-idle-delay 0.1)
+
+

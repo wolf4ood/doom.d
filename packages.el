@@ -61,3 +61,6 @@
   (progn
     (package! treemacs-all-the-icons)
     (package! treemacs-icons-dired)))
+
+
+(disable-packages! psc-ide)

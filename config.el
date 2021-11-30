@@ -68,8 +68,8 @@
 (setq gc-cons-threshold 100000000)
 (setq lsp-idle-delay 0.500)
 (use-package nyan-mode
-      :init
-      (nyan-mode))
+  :init
+  (nyan-mode))
 
 (setq company-dabbrev-downcase 0)
 (setq company-idle-delay 0)
@@ -77,9 +77,9 @@
 
 
 (with-eval-after-load 'evil
-    (defalias #'forward-evil-word #'forward-evil-symbol)
-    ;; make evil-search-word look for symbol rather than word boundaries
-    (setq-default evil-symbol-word-search t))
+  (defalias #'forward-evil-word #'forward-evil-symbol)
+  ;; make evil-search-word look for symbol rather than word boundaries
+  (setq-default evil-symbol-word-search t))
 
 
 (setq lsp-enable-file-watchers nil)
@@ -97,3 +97,26 @@
 (setq which-key-idle-delay 0.1)
 
 
+(defun insert-after-char (key)
+  "New line after first matched char"
+  (interactive "sInsert after: ")
+  (insert-after--char key)
+  )
+
+(defun insert-after--char (key)
+  (evil-snipe-seek 1 key)
+  (forward-char)
+  (call-interactively 'newline)
+  (call-interactively 'evil-open-above)
+  )
+
+(defun insert-after-curly-bracket ()
+  "Insert newline after {"
+  (interactive)
+  (insert-after--char "{")
+  )
+
+(map!
+ (:prefix "g"
+  :desc "New line after first curly bracket matched" :n "{" #'insert-after-curly-bracket
+  ))

@@ -23,7 +23,8 @@
        company           ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       (ivy +childframe)               ; a search engine for love and life
+       ;; (ivy +childframe)               ; a search engine for love and life
+       vertico
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -104,6 +105,7 @@
           lsp-ui-sideline-show-hover t
           lsp-ui-sideline-show-diagnostics t
           lsp-execute-code-action t
+          lsp-rust-analyzer-proc-macro-enable t
           ;;lsp-rust-analyzer-server-display-inlay-hints t
           lsp-rust-analyzer-display-parameter-hints t
           lsp-rust-analyzer-display-chaining-hints t)
@@ -141,7 +143,7 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       ;;(go +lsp)         ; the hipster dialect
+       (go +lsp)         ; the hipster dialect
        ;;(haskell +dante)  ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
@@ -179,7 +181,7 @@
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        web               ; the tubes
-       ;;yaml              ; JSON, but readable
+       yaml              ; JSON, but readable
 
        :email
        ;;(mu4e +gmail)

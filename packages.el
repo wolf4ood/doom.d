@@ -56,6 +56,7 @@
 (package! tree-sitter-langs)
 (package! lsp-treemacs)
 (package! nyan-mode)
+(package! dhall-mode)
 
 (when (package! treemacs)
   (progn

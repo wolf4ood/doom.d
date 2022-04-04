@@ -53,7 +53,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-s") '+default/search-buffer)
 
 (blink-cursor-mode 10)
 

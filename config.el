@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-laserwave)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -121,3 +121,10 @@
   :desc "New line after first curly bracket matched" :n "{" #'insert-after-curly-bracket
   ))
 
+(map! :leader
+      :desc "Go Back Position"
+      "c p" #'xref-go-back)
+
+(map! :leader
+      :desc "Go Next Position"
+      "c n" #'xref-go-forward)
